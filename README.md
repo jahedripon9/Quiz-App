@@ -1,5 +1,8 @@
 # Quiz App
 
+## Live Demo
+A live demo of the application is available [here](https://quiz-app-ebon-delta.vercel.app/).
+
 ## Description
 This is a simple quiz application built with HTML, CSS, and JavaScript. It quizzes users on various topics with multiple-choice questions and provides instant feedback on their answers.
 
@@ -14,9 +17,6 @@ This is a simple quiz application built with HTML, CSS, and JavaScript. It quizz
 - HTML
 - CSS
 - JavaScript
-
-## Live Demo
-A live demo of the application is available [here](https://quiz-app-ebon-delta.vercel.app/).
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/your-username/quiz-app.git`
@@ -36,5 +36,5 @@ A live demo of the application is available [here](https://quiz-app-ebon-delta.v
 - Mention any resources, tutorials, or acknowledgements of third-party libraries or tools used in your project.
 
 ## Contact
-- Email: your-jahedahmed3170@gmail.com
+- Email: jahedahmed3170@gmail.com
 - GitHub: [Your GitHub Profile](https://github.com/jahedripon9)
