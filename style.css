@@ -3,16 +3,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Default font family */
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #001e4d, #002f80);
-    color: #333;
+    color: #fff;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    /* Ensure the body takes up the full viewport height */
     margin: 0;
 }
 
@@ -21,31 +21,35 @@ body {
     width: 90%;
     max-width: 800px;
     margin: 20px auto;
-    /* Center the app container horizontally */
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     flex: 1;
-    /* Allow the app container to grow to fill available space */
+    animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
+/* Heading styles */
 .app h1 {
-    font-size: 30px;
+    font-size: 36px;
     color: #001e4d;
     font-weight: 700;
     border-bottom: 2px solid #333;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .quiz {
     padding: 20px 0;
+    animation: slideInDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .quiz h2 {
-    font-size: 20px;
-    color: #001e4d;
+    font-size: 24px;
+    color: #002f80;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -61,17 +65,17 @@ body {
     background: #fff;
     color: #222;
     font-weight: 500;
+    font-size: 16px;
+    /* Adjusted font size */
     width: calc(50% - 20px);
-    /* Adjust button width as needed */
     max-width: 300px;
-    /* Maximum button width */
     border: 1px solid #222;
     padding: 15px;
     margin: 10px;
     text-align: center;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover:not([disabled]) {
@@ -79,15 +83,46 @@ body {
     color: #fff;
 }
 
+/* Animation for incorrect answer */
+.incorrect {
+    background: #ff9393;
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    80% {
+        transform: translateX(10px);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateX(-10px);
+    }
+
+    40%,
+    60% {
+        transform: translateX(10px);
+    }
+}
+
 #next-btn {
     background: #001e4d;
     color: #fff;
     font-weight: 500;
+    font-size: 16px;
+    /* Adjusted font size */
     width: 150px;
     border: 0;
     padding: 10px;
     margin: 20px auto 0;
-    /* Center button and add space at the top */
     border-radius: 50px;
     cursor: pointer;
     display: none;
@@ -100,30 +135,26 @@ body {
 
 .correct {
     background: #9aeabc;
-}
-
-.incorrect {
-    background: #ff9393;
+    animation: pulse 0.3s ease-in-out alternate infinite;
 }
 
 .footer {
-    color: #000;
+    color: #ffffff;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     padding: 10px;
     flex-shrink: 0;
-    /* Ensure the footer doesn't shrink */
+    animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .footer a {
-    color: #000;
+    color: #000000;
     text-decoration: none;
 }
 
 @media (max-width: 767px) {
     .btn {
         width: calc(100% - 20px);
-        /* Full width for buttons on smaller screens */
     }
 }
 
@@ -133,16 +164,15 @@ body {
     }
 
     .app h1 {
-        font-size: 26px;
+        font-size: 30px;
         padding-bottom: 15px;
     }
 
     .quiz h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .btn {
         width: calc(100% - 20px);
-        /* Full width for buttons on smaller screens */
     }
 }
