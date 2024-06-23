@@ -1,4 +1,4 @@
-/* Reset and global styles */
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +7,12 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
+    background: linear-gradient(to right, #001e4d, #002f80);
+    color: #333;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     min-height: 100vh;
+    /* Ensure the body takes up the full viewport height */
     margin: 0;
 }
 
@@ -19,143 +20,110 @@ body {
     background: #fff;
     width: 90%;
     max-width: 800px;
-    margin: 20px;
+    margin: 20px auto;
+    /* Center the app container horizontally */
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
+    flex: 1;
+    /* Allow the app container to grow to fill available space */
 }
 
-.app-header {
-    margin-bottom: 40px;
-}
-
-.app-header h1 {
-    font-size: 2.5rem;
+.app h1 {
+    font-size: 30px;
     color: #001e4d;
     font-weight: 700;
-    border-bottom: 2px solid #001e4d;
-    padding-bottom: 10px;
-}
-
-.quiz-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    /* Ensure relative positioning for absolute elements */
-}
-
-.quiz h2 {
-    font-size: 1.5rem;
-    color: #001e4d;
-    font-weight: 600;
+    border-bottom: 2px solid #333;
+    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
-.answer-buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 20px;
+    color: #001e4d;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#answer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn {
-    background-color: #001e4d;
-    color: #fff;
+    background: #fff;
+    color: #222;
     font-weight: 500;
+    width: calc(50% - 20px);
+    /* Adjust button width as needed */
+    max-width: 300px;
+    /* Maximum button width */
+    border: 1px solid #222;
     padding: 15px;
-    border: none;
-    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
 }
 
-.btn:hover {
-    background-color: #002f80;
+.btn:hover:not([disabled]) {
+    background: #222;
+    color: #fff;
 }
 
-.next-btn {
-    background-color: #002f80;
+#next-btn {
+    background: #001e4d;
     color: #fff;
     font-weight: 500;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 10px;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    /* Center button and add space at the top */
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    position: absolute;
-    bottom: 20px;
-    /* Adjust bottom position as needed */
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
+    transition: background 0.3s;
 }
 
-.next-btn:hover {
-    background-color: #003fbc;
+#next-btn:hover {
+    background: #002f80;
 }
 
-/* Footer styles */
+.correct {
+    background: #9aeabc;
+}
+
+.incorrect {
+    background: #ff9393;
+}
+
 .footer {
-    background-color: #001e4d;
-    color: #fff;
+    color: #000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-}
-
-.footer .container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.footer-divider {
-    border-color: #fff;
-    margin-bottom: 10px;
-}
-
-.footer-text {
-    font-size: 14px;
+    padding: 10px;
+    flex-shrink: 0;
+    /* Ensure the footer doesn't shrink */
 }
 
 .footer a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
-.footer a:hover {
-    color: #002f80;
-}
-
-/* Media queries for responsive design */
 @media (max-width: 767px) {
-    .app {
-        padding: 30px;
-    }
-
-    .app-header h1 {
-        font-size: 2rem;
-    }
-
-    .quiz h2 {
-        font-size: 1.25rem;
-    }
-
-    .answer-buttons {
-        grid-template-columns: 1fr;
-    }
-
     .btn {
-        padding: 12px;
-        font-size: 0.9rem;
-    }
-
-    .next-btn {
-        padding: 12px 25px;
+        width: calc(100% - 20px);
+        /* Full width for buttons on smaller screens */
     }
 }
 
@@ -164,20 +132,17 @@ body {
         padding: 20px;
     }
 
-    .app-header h1 {
-        font-size: 1.75rem;
+    .app h1 {
+        font-size: 26px;
+        padding-bottom: 15px;
     }
 
     .quiz h2 {
-        font-size: 1rem;
+        font-size: 18px;
     }
 
     .btn {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-
-    .next-btn {
-        padding: 10px 20px;
+        width: calc(100% - 20px);
+        /* Full width for buttons on smaller screens */
     }
 }
