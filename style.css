@@ -43,6 +43,8 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Ensure relative positioning for absolute elements */
 }
 
 .quiz h2 {
@@ -82,8 +84,11 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 20px;
-    /* Adjusted margin-top */
+    position: absolute;
+    bottom: 20px;
+    /* Adjust bottom position as needed */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .next-btn:hover {
