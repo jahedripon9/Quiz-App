@@ -37,5 +37,5 @@ This is a simple quiz application built with HTML, CSS, and JavaScript. It quizz
 
 ## Contact
 - Email: jahedahmed3170@gmail.com
-- Protfolio: [Your Protfolio](https://jahedahmed-portfolio.netlify.app/)
-- GitHub: [Your GitHub Profile](https://github.com/jahedripon9)
+- Protfolio: [Protfolio](https://jahedahmed-portfolio.netlify.app/)
+- GitHub: [GitHub](https://github.com/jahedripon9)
